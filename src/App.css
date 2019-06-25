@@ -1,25 +1,24 @@
 .App {
-  display: grid;
-  grid-gap: 20px;
   background-color:rgba(85, 166, 156, 1);
-  display: block;
 }
-html, body {
- height: 1024px;
+html{
  width: 1024px;
- margin: 0;
- padding: 0;
- position:center;
- margin:auto;
+ height:  1024px;
+
+ margin: auto;
+ 
 }
 
-div {
-  color: #FFF;
-  background-position: center !important;
+.div
+{
+ background-color: #fff;
   font-weight: bold;
-  padding: 20px;
-  margin: auto;
-  
-  
 }
 
+.header {
+  padding: 60px;
+  text-align: center;
+  background: rgba(85, 166, 156, 1);
+  color: white;
+  font-family: "Roboto";
+}
