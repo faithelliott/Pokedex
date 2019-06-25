@@ -1,36 +1,25 @@
 .App {
   display: grid;
   grid-gap: 20px;
+  background-color:rgba(85, 166, 156, 1);
+  display: block;
+}
+html, body {
+ height: 1024px;
+ width: 1024px;
+ margin: 0;
+ padding: 0;
+ position:center;
+ margin:auto;
+}
+
+div {
+  color: #FFF;
+  background-position: center !important;
+  font-weight: bold;
+  padding: 20px;
+  margin: auto;
+  
   
 }
 
-
-.PokeCard{
-  width: 150px;
-  height: 200px;
-  padding: 20px;
-  background-color: #263238;
-  margin: 5px;
-  transition: 0.3s;
-  box-shadow: 0 0px 0px 0 #EF5350;
-  text-align: center;
-  font-size: 20px;
-}
-
-.PokeCard:hover{
-  box-shadow: 4px 4px 8px 0px #EF5350;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
