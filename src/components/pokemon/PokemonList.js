@@ -3,9 +3,10 @@ import PokeCard from "./PokeCard";
 import axios from 'axios';
 
 export default class PokemonList extends Component {
+    
     state = {
       url: 'https://intern-pokedex.myriadapps.com/api/v1/pokemon/',
-      pokemon: null
+      pokemon: null,
     };
   
     async componentDidMount() {
@@ -23,7 +24,6 @@ export default class PokemonList extends Component {
                   key={pokemon.id}
                   name={pokemon.name}
                   image={pokemon.image}
-                  url={pokemon.url}
                 />
               ))}
             </div>

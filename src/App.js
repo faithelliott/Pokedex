@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
-import Axios from 'axios';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Dash from './components/layout/Dash'
-
-
+import Pokemon from './components/pokemon/Pokemon';
 
 class App extends Component {
 
-
-
-
-
-  
   render() {
         
-
     return (
-    <div class="App">
-      <div class="header">
-  <h1>PokeDex</h1>
-</div>
-      <Dash></Dash>
+      <Router>
+      <div className="App">
+        <div className="header">
+          <h1>Pokedex</h1>
+          </div>
+          <Switch>
+            <Route exact path="/" component={Dash} />
+            <Route exact path="/Pokemon/:id" component={Pokemon} />
+          </Switch>
+        </div>
       
-    </div>
-    )
-  }
-  
+    </Router>
+  );
+}
 }
 
 
