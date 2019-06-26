@@ -22,7 +22,6 @@ export default class PokeCard extends Component{
         <div className='col-md-3 col-sm-6 mb-5'>
             <div className="card">
              <h6 className="card-title mx-auto">{this.state.name}</h6>
-             
              <div className="imageSize mx-auto"><img src={image} />
              </div>
              </div>
