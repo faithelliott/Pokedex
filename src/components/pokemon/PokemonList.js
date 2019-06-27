@@ -39,7 +39,7 @@ export default class PokemonList extends Component {
        console.log(this.state.nextPage);
     }
 
-    decremenentPage = () => {
+    decrementPage = () => {
       if(this.state.nextPage == 1)
       {
         this.state.nextPage = 37;
@@ -60,8 +60,8 @@ export default class PokemonList extends Component {
     render() {
       return (
         <div>
-         <button className="button" onClick={this.decrementPage}><span class="glyphicon glyphicon-arrow-left"></span></button>
-         <button className="button" onClick={this.incrementPage}><span class="glyphicon glyphicon-arrow-right"></span></button>
+         <button className="button float-left" onClick={this.decrementPage}><span class="glyphicon glyphicon-arrow-left"></span></button>
+         <button className="button float-right"onClick={this.incrementPage}><span class="glyphicon glyphicon-arrow-right"></span></button>
          
           {this.state.pokemon ? (
             <div className="row">

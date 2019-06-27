@@ -1,17 +1,18 @@
 .App {
   background-color:rgba(85, 166, 156, 1);
-  padding: 60px;
-  height:100vh;
+  padding-left:10%;
+  padding-right:10%;
+  padding-top:2%;
 }
 html{
  margin: auto;
- height:100vh;
+
+ background: rgba(85, 166, 156, 1);
 }
 
 
 
 .header {
-  padding: 60px;
   text-align: center;
   background: rgba(85, 166, 156, 1);
   color: white;

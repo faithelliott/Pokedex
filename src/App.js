@@ -31,16 +31,14 @@ class App extends Component {
       <Router>
       <div className="App">
         <div className="header">
+          <h1>Pokedex</h1>
           </div>
           <Switch>
             <Route exact path="/" component={Dash} />
             <Route exact path="/Pokemon/:id" component={Pokemon} />
           </Switch>
         </div>
-        <span>{this.state.windowWidth} x {this.state.windowHeight}
-      </span>
     </Router>
-    
     
   );
 }

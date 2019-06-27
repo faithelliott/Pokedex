@@ -11,22 +11,22 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(255, 0, 0, 0);
   }
+  height: 200px;
+  width: 200px;
 `;
 
 const StyledLink = styled(Link)`
 
-  color: black;
+  color: grey;
   font-family: 'Roboto';
-  ont-size: 16px;
+  font-size: 16px;
   font-weight: bold;
-  &:focus,
   &:hover,
-  &:visited,
-  &:link,
   &:active {
     text-decoration: none;
   }
 `;
+
 export default class PokeCard extends Component{
     state={
         name: '',
@@ -46,14 +46,12 @@ export default class PokeCard extends Component{
       
         return(
          
-        <div className='col-md-3 col-sm-6 mb-5'>
+        <div className='mx-auto p-3'>
             <StyledLink to={`pokemon/${id}`}>
             <Card className="card">
-            
             <h5 className="card-header text-center">{this.state.name}</h5> 
              <div className="imageSize mx-auto"><img src={image} />
              </div>
-             
              </Card>
              </StyledLink>
         </div>
