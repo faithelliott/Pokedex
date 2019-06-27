@@ -1,31 +1,63 @@
 import React, { Component } from 'react'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
+
+const Card = styled.div`
+  opacity: 0.95;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 1px 2px rgba(255, 0, 0, 0);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(255, 0, 0, 0);
+  }
+`;
+
+const StyledLink = styled(Link)`
+
+  color: black;
+  font-family: 'Roboto';
+  ont-size: 16px;
+  font-weight: bold;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
 export default class PokeCard extends Component{
     state={
         name: '',
         image: '',
+        id: ''
        
     }
 
     componentDidMount() {
-        const { name } = this.props;
+        const { name,id } = this.props;
         this.setState({ name });
       }
 
 
     render() {
-        const {name,image,nextPage} = this.props;
+        const {name,image,id} = this.props;
       
         return(
          
         <div className='col-md-3 col-sm-6 mb-5'>
-            <div className="card">
-             <h6 className="card-title mx-auto">{this.state.name}</h6>
+            <StyledLink to={`pokemon/${id}`}>
+            <Card className="card">
+            
+            <h5 className="card-header text-center">{this.state.name}</h5> 
              <div className="imageSize mx-auto"><img src={image} />
              </div>
-             </div>
+             
+             </Card>
+             </StyledLink>
         </div>
+
         )
     }
 }

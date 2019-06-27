@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import PokeCard from "./PokeCard";
 import axios from 'axios';
+import './PokemonList.css';
 import Button from 'react-bootstrap/Button';
-
-
-
-
-
 
 
 export default class PokemonList extends Component {
@@ -15,7 +11,8 @@ export default class PokemonList extends Component {
       url: 'https://intern-pokedex.myriadapps.com/api/v1/pokemon?page=',
       newUrl: 'https://intern-pokedex.myriadapps.com/api/v1/pokemon?page=1',
       pokemon: null,
-      nextPage: null,
+      nextPage: 2,
+      id:''
       
     };
 
@@ -25,54 +22,53 @@ export default class PokemonList extends Component {
     }
     
      incrementPage = () => {
-       this.setState({nextPage: this.state.nextPage+1});
+      if(this.state.nextPage == 37)
+      {
+        this.state.nextPage = 1;
+        
+      }else
+      {
+        this.setState({nextPage: this.state.nextPage+1});
+      }
+      
        axios.get(this.state.url+this.state.nextPage).then((response)=> {
          this.setState({
            pokemon: response.data['data'],
          })
        })
+       console.log(this.state.nextPage);
     }
 
     decremenentPage = () => {
-      this.setState({nextPage: this.state.nextPage-1});
+      if(this.state.nextPage == 1)
+      {
+        this.state.nextPage = 37;
+        
+      }else
+      {
+        this.setState({nextPage: this.state.nextPage-1});
+      }
       axios.get(this.state.url+this.state.nextPage).then((response)=> {
         this.setState({
           pokemon: response.data['data'],
         })
       })
+      console.log(this.state.nextPage);
    }
 
   
     render() {
       return (
         <div>
-          <div className="header">
-          <Button 
-           style={{
-            backgroundColor: "transparent",
-            borderColor: "#fff",
-            borderRadius: 25,
-            width: 50,
-            height: 50,
-            position: "left",
-            
-        }}
-        textStyle={{ color: "#FFFFFF" }} onClick={this.decrementPage}>{"<"}</Button>
-          <Button style={{
-            backgroundColor: "transparent",
-            borderColor: "#fff",
-            borderRadius: 25,
-            width: 50,
-            height: 50,
-            position: "right",
-          
-        }}
-        textStyle={{ color: "#FFFFFF" }}  onClick={this.incrementPage}>{">"}</Button></div>
+         <button className="button" onClick={this.decrementPage}><span class="glyphicon glyphicon-arrow-left"></span></button>
+         <button className="button" onClick={this.incrementPage}><span class="glyphicon glyphicon-arrow-right"></span></button>
+         
           {this.state.pokemon ? (
             <div className="row">
               {this.state.pokemon.map(pokemon => (
                 <PokeCard
-                  key={pokemon.id}
+                  key={pokemon.name}
+                  id={pokemon.id}
                   name={pokemon.name}
                   image={pokemon.image}
                 />
