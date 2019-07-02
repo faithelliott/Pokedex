@@ -31,13 +31,14 @@ export default class PokeCard extends Component{
     state={
         name: '',
         image: '',
-        id: ''
-       
+        id: '',
+        types:null 
     }
 
     componentDidMount() {
         const { name,id } = this.props;
         this.setState({ name });
+        this.setState({id});
       }
 
 
@@ -45,12 +46,11 @@ export default class PokeCard extends Component{
         const {name,image,id} = this.props;
       
         return(
-         
         <div className='mx-auto p-3'>
             <StyledLink to={`pokemon/${id}`}>
             <Card className="card">
             <h5 className="card-header text-center">{this.state.name}</h5> 
-             <div className="imageSize mx-auto"><img src={image} />
+             <div className="imageSize mx-auto"><img src={image}/>
              </div>
              </Card>
              </StyledLink>

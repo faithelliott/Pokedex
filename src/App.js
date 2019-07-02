@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import ReactDOM from 'react-dom';
 import './App.css';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Dash from './components/layout/Dash'

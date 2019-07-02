@@ -4,13 +4,10 @@
   padding-right:10%;
   padding-top:2%;
 }
-html{
- margin: auto;
 
+html,body{
  background: rgba(85, 166, 156, 1);
 }
-
-
 
 .header {
   text-align: center;
