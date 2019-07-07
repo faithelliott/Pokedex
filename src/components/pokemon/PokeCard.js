@@ -28,24 +28,45 @@ const StyledLink = styled(Link)`
     text-decoration: none;
   }
 `;
+const TYPE_COLORS = {
+  bug: 'B1C12E',
+  dark: '4F3A2D',
+  dragon: '755EDF',
+  electric: 'FCBC17',
+  fairy: 'F4B1F4',
+  fighting: '823551D',
+  fire: 'E73B0C',
+  flying: 'A3B3F7',
+  ghost: '6060B2',
+  grass: '74C236',
+  ground: 'D3B357',
+  ice: 'A3E7FD',
+  normal: 'C8C4BC',
+  poison: '934594',
+  psychic: 'ED4882',
+  rock: 'B9A156',
+  steel: 'B5B5C3',
+  water: '3295F6'
+};
+
 
 export default class PokeCard extends Component{
     state={
         name: '',
         image: '',
         id: '',
-        types:null 
+        types:[]
     }
 
     componentDidMount() {
-        const { name,id } = this.props;
+        const { name,id,types } = this.props;
         this.setState({ name });
         this.setState({id});
+        this.setState({types});
       }
 
-
     render() {
-        const {name,image,id} = this.props;
+        const {name,image,id,types} = this.props;
       
         return(
         <div className='mx-auto p-3'>
@@ -53,6 +74,26 @@ export default class PokeCard extends Component{
             <Card className="card">
             <h5 className="card-header text-center">{this.state.name}</h5> 
              <div className="imageSize mx-auto"><img src={image}/>
+             <div className="col-7">
+             <div className="float-right">
+                  {this.state.types.map(types => (
+                    <span
+                      key={types}
+                      className="badge badge-pill mr-1"
+                      style={{
+                        backgroundColor: `#${TYPE_COLORS[types]}`,
+                        color: 'white'
+                      }}
+                    >
+                      {types
+                        .toLowerCase()
+                        .split(' ')
+                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                        .join(' ')}
+                    </span>
+                  ))}
+                </div>
+              </div>
              </div>
              </Card>
              </StyledLink>

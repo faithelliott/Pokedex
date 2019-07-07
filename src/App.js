@@ -33,7 +33,6 @@ class App extends Component {
       <Router>
       <div className="App">
         <div className="header">
-          <h1>Pokedex</h1>
           </div>
           <Switch>
             <Route exact path="/" component={Dash} />

@@ -12,16 +12,15 @@ const GoBack = styled.a`
   -o-user-select: none;
   -webkit-font-smoothing: antialiased;
 `;
+
 const Card = styled.div`
 -webkit-font-smoothing: antialiased;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 1px 2px rgba(255, 0, 0, 0);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  &:hover {
-    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(255, 0, 0, 0);
-  }
   height: 90vh;
-  widtgh= 90vh;
+  width: 90vh;
+  margin:0 auto;
   overflow: auto;
+  font-family: 'Roboto';
+  font-size: 100%;
 `;
 
 
@@ -32,12 +31,12 @@ export default class Pokemon extends Component{
         name:'',
         image:'',
         themeColor:'',
-        statTitleWidth: 6,
-        statBarWidth: 18,
-        themeColor: "060606",
+        statTitleWidth: 3,
+        statBarWidth: 8,
+        themeColor: "",
     }
 
-    async componentDidMount(){
+       async componentDidMount(){
 
         const{id} = this.props.match.params;
         console.log({id});
@@ -53,20 +52,19 @@ export default class Pokemon extends Component{
         this.setState({speed: this.state.pokemon.stats.speed});
         this.setState({specialAttack: this.state.pokemon.stats['special-attack']});
         this.setState({specialDefense: this.state.pokemon.stats['special-defense']});
-  
+
+     
     }
  
-  
+   
     render(){ 
         const {name,image,id,stats,hp} = this.props.match.params;
         
        
         return(   
+          
       <div className="col">     
-        <GoBack
-          href="#"
-          className="navbar-brand"
-        >
+        <GoBack href="#">
             <button className="button float-left">{"<"}</button>
         </GoBack>
         <Card className="card">
@@ -75,37 +73,34 @@ export default class Pokemon extends Component{
               <div className="col-5">
                 <h5>{this.state.pokemon.id}</h5>
               </div>
-              <div className="col-7">
-                <div className="float-right">
-                </div>
-              </div>
+            
             </div>
           </div>
           <div className="card-body">
-            <div className="row align-items-center">
-              <div className=" col-md-3 ">
-                <img
+            <div className="row">
+              <div className="col-md-4 ">
+                <img 
+                id= "pokeImg"
                   src={this.state.pokemon.image}
                 />
               </div>
-              <div className="col-md-9">
-                <h4 className="mx-auto">
+              <div className="col-md-7">
+                <h4>
                   {this.state.pokemon.name}
                 </h4>
-                <div className="row align-items-center">
+                <div className="row">
                   <div className={`col-12 col-md-${this.state.statTitleWidth}`}>
                     HP 
                   </div>
                   <div className={`col-12 col-md-${this.state.statBarWidth}`}>
                     <div className="progress">
                       <div
-                        className="progress-bar "
+                        className="progress-bar"
                         role="progressbar"
                         style={{
                           width: `${this.state.hp}%`,
                           backgroundColor: `#${this.state.themeColor}`
                         }}
-                        aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
@@ -127,7 +122,6 @@ export default class Pokemon extends Component{
                           width: `${this.state.attack}%`,
                           backgroundColor: `#${this.state.themeColor}`
                         }}
-                        aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
@@ -150,7 +144,6 @@ export default class Pokemon extends Component{
                           width: `${this.state.defense}%`,
                           backgroundColor: `#${this.state.themeColor}`
                         }}
-                        aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >
@@ -172,7 +165,6 @@ export default class Pokemon extends Component{
                           width: `${this.state.speed}%`,
                           backgroundColor: `#${this.state.themeColor}`
                         }}
-                        aria-valuenow="25"
                         aria-valuemin="0"
                         aria-valuemax="100"
                       >

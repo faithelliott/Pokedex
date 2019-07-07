@@ -4,7 +4,6 @@ import axios from 'axios';
 import './PokemonList.css';
 
 
-
 export default class PokemonList extends Component {
 
   state = {
@@ -65,12 +64,13 @@ export default class PokemonList extends Component {
 
     render() {
       return (
-        <div className="header"> 
-          
- 
-         <input type="text"  placeholder="PokeDex" onKeyDown={this.search.bind(this)}></input>
-         <button className="button float-left" onClick={this.decrementPage}>{"<"}</button>
-         <button className="button float-right"onClick={this.incrementPage}>{">"}</button>
+        <div> 
+          <div className="header"> 
+         <button className="button" onClick={this.decrementPage}><span class="glyphicon glyphicon-chevron-left"></span></button>
+         
+      <input type="text"  placeholder="Pokedex" onKeyDown={this.search.bind(this)}></input>
+         <button className="button"onClick={this.incrementPage}><span class="glyphicon glyphicon-chevron-right"></span></button>
+         </div>
           {this.state.pokemon ? (
             <div className="row">
               {this.state.pokemon.map(pokemon => (
@@ -79,6 +79,7 @@ export default class PokemonList extends Component {
                   id={pokemon.id}
                   name={pokemon.name}
                   image={pokemon.image}
+                  types={pokemon.types}
                 />
               ))}
             </div>
