@@ -61,10 +61,7 @@ export default class PokemonList extends Component {
         })
       })
       console.log(this.state.searchString);
-     
-     
      }
-    
    }
 
     render() {
