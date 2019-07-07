@@ -18,6 +18,8 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(255, 0, 0, 0);
   }
+  height: 90vh;
+  widtgh= 90vh;
   overflow: auto;
 `;
 

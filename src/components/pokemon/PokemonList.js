@@ -67,6 +67,7 @@ export default class PokemonList extends Component {
     render() {
       return (
         <div> 
+          
          <input type="text"  placeholder="PokeDex" onKeyDown={this.search.bind(this)}></input>
          <button className="button float-left" onClick={this.decrementPage}>{"<"}</button>
          <button className="button float-right"onClick={this.incrementPage}>{">"}</button>
