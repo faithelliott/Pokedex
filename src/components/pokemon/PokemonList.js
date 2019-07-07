@@ -12,6 +12,7 @@ export default class PokemonList extends Component {
       nextPage: 2,
       id:'',
       searchString:'',
+      display:true,
     };
 
     async componentDidMount() {

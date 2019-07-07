@@ -74,12 +74,12 @@ export default class PokeCard extends Component{
             <Card className="card">
             <h5 className="card-header text-center">{this.state.name}</h5> 
              <div className="imageSize mx-auto"><img src={image}/>
-             <div className="col-7">
-             <div className="float-right">
+             
+             <div className="mx-auto">
                   {this.state.types.map(types => (
                     <span
                       key={types}
-                      className="badge badge-pill mr-1"
+                      className="badge badge-pill"
                       style={{
                         backgroundColor: `#${TYPE_COLORS[types]}`,
                         color: 'white'
@@ -88,17 +88,15 @@ export default class PokeCard extends Component{
                       {types
                         .toLowerCase()
                         .split(' ')
-                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-                        .join(' ')}
+                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))}
                     </span>
                   ))}
-                </div>
+                
               </div>
              </div>
              </Card>
              </StyledLink>
         </div>
-
         )
     }
 }

@@ -5,19 +5,14 @@ import styled from 'styled-components';
 var ColorThief = require('color-thief');
 
 const GoBack = styled.a`
-  -moz-user-select: none;
-  -website-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -o-user-select: none;
   -webkit-font-smoothing: antialiased;
 `;
 
 const Card = styled.div`
--webkit-font-smoothing: antialiased;
   height: 90vh;
-  width: 90vh;
-  margin:0 auto;
+  width: 60vh;
+  margin:auto;
+  -webkit-font-smoothing: antialiased;
   overflow: auto;
   font-family: 'Roboto';
   font-size: 100%;
@@ -63,9 +58,10 @@ export default class Pokemon extends Component{
        
         return(   
           
-      <div className="col">     
+      <div className="col"> 
+       
         <GoBack href="#">
-            <button className="button float-left">{"<"}</button>
+            <button className="button">{"<"}</button>
         </GoBack>
         <Card className="card">
           <div className="card-header">
@@ -220,12 +216,12 @@ export default class Pokemon extends Component{
               </div>
             </div>
             <div className="row mt-1">
-              <div className="col">     
-              </div>
+             
           </div>
-          <hr />     
+          <hr /> 
+         <p className="">{this.state.pokemon.description}</p> 
           </div> 
-          <p className="">{this.state.pokemon.description}</p> 
+           
           </Card>
           </div>
         );
