@@ -14,6 +14,7 @@ const Card = styled.div`
   height: 30vh;
   width: 30vh;
   overflow: auto;
+  -webkit-font-smoothing: antialiased;
 `;
 
 const StyledLink = styled(Link)`

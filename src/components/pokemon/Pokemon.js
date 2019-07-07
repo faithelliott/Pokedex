@@ -10,9 +10,10 @@ const GoBack = styled.a`
   -ms-user-select: none;
   user-select: none;
   -o-user-select: none;
+  -webkit-font-smoothing: antialiased;
 `;
 const Card = styled.div`
- 
+-webkit-font-smoothing: antialiased;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 1px 2px rgba(255, 0, 0, 0);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
