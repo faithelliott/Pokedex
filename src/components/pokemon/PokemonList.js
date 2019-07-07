@@ -67,10 +67,10 @@ export default class PokemonList extends Component {
       return (
         <div> 
           <div className="header"> 
-         <button className="button" onClick={this.decrementPage}><span class="glyphicon glyphicon-chevron-left"></span></button>
+         <button className="button p-2" onClick={this.decrementPage}><span class="glyphicon glyphicon-chevron-left"></span></button>
          
       <input type="text"  placeholder="Pokedex" onKeyDown={this.search.bind(this)}></input>
-         <button className="button"onClick={this.incrementPage}><span class="glyphicon glyphicon-chevron-right"></span></button>
+         <button className="button p-2"onClick={this.incrementPage}><span class="glyphicon glyphicon-chevron-right"></span></button>
          </div>
           {this.state.pokemon ? (
             <div className="row">

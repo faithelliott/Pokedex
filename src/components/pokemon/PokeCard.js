@@ -11,7 +11,7 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(255, 0, 0, 0);
   }
-  height: 30vh;
+  height:30vh;
   width: 30vh;
   overflow: auto;
   -webkit-font-smoothing: antialiased;
@@ -69,15 +69,16 @@ export default class PokeCard extends Component{
         const {name,image,id,types} = this.props;
       
         return(
-        <div className='mx-auto p-3'>
+        <div className='mx-auto p-4'>
             <StyledLink to={`pokemon/${id}`}>
             <Card className="card">
+            
             <h5 className="card-header text-center">{this.state.name}</h5> 
              <div className="imageSize mx-auto"><img src={image}/>
              
-             <div className="mx-auto">
+             <div className="typeDiv">
                   {this.state.types.map(types => (
-                    <span
+                    <span 
                       key={types}
                       className="badge badge-pill"
                       style={{

@@ -216,12 +216,10 @@ export default class Pokemon extends Component{
               </div>
             </div>
             <div className="row mt-1">
-             
           </div>
           <hr /> 
          <p className="">{this.state.pokemon.description}</p> 
-          </div> 
-           
+          </div>
           </Card>
           </div>
         );
