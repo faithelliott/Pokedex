@@ -1,0 +1,12 @@
+.card{
+position: absolute;
+background-color: rgba(255, 255, 255, 1);
+font-family: 'Roboto';
+}
+
+div{
+    background-color:rgba(85, 166, 156, 1);
+}
+.card-header{
+    background-color: rgba(255, 255, 255, 1);
+}

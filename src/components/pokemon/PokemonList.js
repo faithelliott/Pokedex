@@ -52,10 +52,9 @@ export default class PokemonList extends Component {
 
     render() {
       return (
-        <div>
-          
-         <button className="button float-left" onClick={this.decrementPage}><span class="glyphicon glyphicon-arrow-left"></span></button>
-         <button className="button float-right"onClick={this.incrementPage}><span class="glyphicon glyphicon-arrow-right"></span></button>
+        <div> 
+         <button className="button float-left" onClick={this.decrementPage}>{"<"}</button>
+         <button className="button float-right"onClick={this.incrementPage}>{">"}</button>
           {this.state.pokemon ? (
             <div className="row">
               {this.state.pokemon.map(pokemon => (

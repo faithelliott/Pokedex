@@ -1,0 +1,18 @@
+.button{
+    
+    background-color: rgba(0, 0, 0, .25);
+    border-radius:64px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    color:rgba(255, 255, 255, 0.25); 
+    top: 56px;
+    left: 888px;
+    height: 64px;
+    width: 64px;
+}
+
+.button:hover {
+    background-color:rgba(255, 255, 255, 0.25); 
+    color:rgba(0, 0, 0, .5)
+  }
+  
