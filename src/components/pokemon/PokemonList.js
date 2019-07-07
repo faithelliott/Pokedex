@@ -12,6 +12,7 @@ export default class PokemonList extends Component {
       pokemon: null,
       nextPage: 2,
       id:'',
+      searchString:'',
     };
 
     async componentDidMount() {
@@ -50,9 +51,26 @@ export default class PokemonList extends Component {
       console.log(this.state.nextPage);
    }
 
+   search = (e) => {
+     this.setState({searchString: e.target.value});
+     if(e.key === 'Enter'){
+      
+      axios.get('https://intern-pokedex.myriadapps.com/api/v1/pokemon?name='+this.state.searchString).then((response)=> {
+        this.setState({
+          pokemon: response.data['data'],
+        })
+      })
+      console.log(this.state.searchString);
+     
+     
+     }
+    
+   }
+
     render() {
       return (
         <div> 
+         <input type="text"  placeholder="PokeDex" onKeyDown={this.search.bind(this)}></input>
          <button className="button float-left" onClick={this.decrementPage}>{"<"}</button>
          <button className="button float-right"onClick={this.incrementPage}>{">"}</button>
           {this.state.pokemon ? (

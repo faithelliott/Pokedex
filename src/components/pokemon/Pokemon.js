@@ -11,6 +11,15 @@ const GoBack = styled.a`
   user-select: none;
   -o-user-select: none;
 `;
+const Card = styled.div`
+ 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 1px 2px rgba(255, 0, 0, 0);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  &:hover {
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(255, 0, 0, 0);
+  }
+  overflow: auto;
+`;
 
 
 export default class Pokemon extends Component{
@@ -55,9 +64,9 @@ export default class Pokemon extends Component{
           href="#"
           className="navbar-brand"
         >
-            <button className="button float-left"><span className="glyphicon glyphicon-arrow-left"></span></button>
+            <button className="button float-left">{"<"}</button>
         </GoBack>
-        <div className="card">
+        <Card className="card">
           <div className="card-header">
             <div className="row">
               <div className="col-5">
@@ -74,7 +83,6 @@ export default class Pokemon extends Component{
               <div className=" col-md-3 ">
                 <img
                   src={this.state.pokemon.image}
-                  className="card-img-top rounded mx-auto mt-2"
                 />
               </div>
               <div className="col-md-9">
@@ -223,7 +231,7 @@ export default class Pokemon extends Component{
           <hr />     
           </div> 
           <p className="">{this.state.pokemon.description}</p> 
-          </div>
+          </Card>
           </div>
         );
     }

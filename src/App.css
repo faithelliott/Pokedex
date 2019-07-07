@@ -7,7 +7,9 @@
 
 html,body{
  background: rgba(85, 166, 156, 1);
+
 }
+
 
 .header {
   text-align: center;
@@ -15,3 +17,4 @@ html,body{
   color: white;
   font-family: "Roboto";
 }
+
