@@ -11,10 +11,9 @@ html,body{
 
 .header {
   text-align: center;
-  background: rgba(85, 166, 156, 1);
   font-family: 'Roboto';
   font-size: 150%;
   font-weight: bold;
-  color: rgba(255, 255, 255, 1);
+
 }
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import styled from 'styled-components';
-
+import './Pokemon.css'
 
 var ColorThief = require('color-thief');
 
@@ -66,7 +66,7 @@ export default class Pokemon extends Component{
       <div className="col"> 
         
         <GoBack href="#">
-            <button className="button">{"<"}</button>
+            <button  className="button"><span class="glyphicon glyphicon-chevron-left"></span></button>
         </GoBack>
         <Card className="card">
           <div className="card-header">
@@ -84,7 +84,7 @@ export default class Pokemon extends Component{
                   src={this.state.pokemon.image}
                 />
               </div>
-              <div className="col-md-7">
+              <div className="col-md-8">
                 <h4>
                   {this.state.pokemon.name}
                 </h4>
@@ -221,7 +221,7 @@ export default class Pokemon extends Component{
             <div className="row mt-1">
           </div>
           <hr /> 
-         <p className="">{this.state.pokemon.description}</p> 
+         <p className="desc">{this.state.pokemon.description}</p> 
           </div>
           </Card>
           </div>
