@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import './PokeCard.css';
 
 
 const Card = styled.div`
@@ -69,12 +69,13 @@ export default class PokeCard extends Component{
         const {name,image,id,types} = this.props;
       
         return(
+          
         <div className='mx-auto p-4'>
             <StyledLink to={`pokemon/${id}`}>
             <Card className="card">
-            
+
             <h5 className="card-header text-center">{this.state.name}</h5> 
-             <div className="imageSize mx-auto"><img src={image}/>
+            <div className="imageSize mx-auto"><img src={image}/>
              
              <div className="typeDiv">
                   {this.state.types.map(types => (

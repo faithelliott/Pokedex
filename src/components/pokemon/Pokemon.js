@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import styled from 'styled-components';
 
+
 var ColorThief = require('color-thief');
 
 const GoBack = styled.a`
   -webkit-font-smoothing: antialiased;
+  width: 2%;
+  height:10%;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius:50%;
+ 
 `;
 
 const Card = styled.div`
@@ -28,15 +35,14 @@ export default class Pokemon extends Component{
         themeColor:'',
         statTitleWidth: 3,
         statBarWidth: 8,
-        themeColor: "",
     }
 
        async componentDidMount(){
 
         const{id} = this.props.match.params;
-        console.log({id});
+        //console.log({id});
         const pokemonUrl = 'https://intern-pokedex.myriadapps.com/api/v1/pokemon/'+id;
-        console.log({pokemonUrl});
+        //console.log({pokemonUrl});
 
         const res = await Axios.get(pokemonUrl);
         
@@ -48,15 +54,6 @@ export default class Pokemon extends Component{
         this.setState({specialAttack: this.state.pokemon.stats['special-attack']});
         this.setState({specialDefense: this.state.pokemon.stats['special-defense']});
         
-        var colorThief = new ColorThief();
-        var img = new Image();
-        img.crossOrigin = 'Anonymous';
-        img.src = this.state.pokemon.image;
-        
-
- 
-        colorThief.getColor(img);
-     
     }
  
    
@@ -67,7 +64,7 @@ export default class Pokemon extends Component{
         return(   
           
       <div className="col"> 
-       
+        
         <GoBack href="#">
             <button className="button">{"<"}</button>
         </GoBack>
@@ -77,7 +74,6 @@ export default class Pokemon extends Component{
               <div className="col-5">
                 <h5>{this.state.pokemon.id}</h5>
               </div>
-            
             </div>
           </div>
           <div className="card-body">
@@ -130,7 +126,6 @@ export default class Pokemon extends Component{
                         aria-valuemax="100"
                       >
                         <small>{this.state.attack}</small>
-                      
                       </div>
                     </div>
                   </div>

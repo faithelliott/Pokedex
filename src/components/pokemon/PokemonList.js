@@ -33,7 +33,7 @@ export default class PokemonList extends Component {
            pokemon: response.data['data'],
          })
        })
-       console.log(this.state.nextPage);
+       //console.log(this.state.nextPage);
     }
 
     decrementPage = () => {

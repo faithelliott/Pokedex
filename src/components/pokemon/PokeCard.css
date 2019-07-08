@@ -4,16 +4,14 @@ background-color: rgba(255, 255, 255, 1);
 font-family: 'Roboto';
 }
 
-div{
-    background-color:rgba(85, 166, 156, 1);
-}
+
 .card-header{
     background-color: rgba(255, 255, 255, 1);
 }
 
 
-span.badge{
-   position: absolute;
-   bottom:0;
-   right:0;
-}
+.typeDiv {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
