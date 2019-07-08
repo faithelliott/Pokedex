@@ -47,7 +47,15 @@ export default class Pokemon extends Component{
         this.setState({speed: this.state.pokemon.stats.speed});
         this.setState({specialAttack: this.state.pokemon.stats['special-attack']});
         this.setState({specialDefense: this.state.pokemon.stats['special-defense']});
+        
+        var colorThief = new ColorThief();
+        var img = new Image();
+        img.crossOrigin = 'Anonymous';
+        img.src = this.state.pokemon.image;
+        
 
+ 
+        colorThief.getColor(img);
      
     }
  
